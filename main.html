@@ -33,12 +33,12 @@
             <!-- card section -->
             <div class="grid grid-cols-3 gap-4 mb-8">
                 <div
-                    class="cursor-pointer flex flex-col justify-center items-center p-5 border rounded-xl border-gray-400">
+                    id="add-money-box" class="cursor-pointer flex flex-col justify-center items-center p-5 border rounded-xl border-gray-400">
                     <img class="mb-2" src="images/wallet 1.png" alt="">
                     <p class="text-sm text-gray-600">Add Money</p>
                 </div>
                 <div
-                    class="cursor-pointer flex flex-col justify-center items-center p-5 border rounded-xl border-gray-400">
+                    id="cash-out-box" class="cursor-pointer flex flex-col justify-center items-center p-5 border rounded-xl border-gray-400">
                     <img class="mb-2" src="images/send 1.png" alt="">
                     <p class="text-sm text-gray-600">CashOut</p>
                 </div>
@@ -65,7 +65,7 @@
             </div>
 
             <!-- add money section -->
-            <section>
+            <section id="addMoneySection">
                 <h1 class="text-lg font-semibold mb-4">Add Money</h1>
                 <div class="">
                     <div class="hero-content flex-col ">
@@ -97,9 +97,36 @@
                     </div>
                 </div>
             </section>
+
+            <!-- cashout section -->
+            <section id="cashoutSection">
+                <h1 class="text-lg font-semibold mb-4">Cash Out</h1>
+                <div class="">
+                    <div class="hero-content flex-col ">
+                        <div class="card w-full max-w-sm shrink-0 shadow-2xl">
+                            <form class="card-body">
+                                <fieldset class="fieldset">
+                                    <label class="fieldset-label text-gray-600 font-medium">Agent Number</label>
+                                    <input id="account-number" type="number" class="input" placeholder=" Enter Agent Number"required />
+                                    <label class="fieldset-label text-gray-600 font-medium">Amount</label>
+                                    <input id="amount" type="text" class="input" placeholder="Enter amount to withdraw" required />
+                                    <label class="fieldset-label text-gray-600 font-medium">PIN Number</label>
+                                    <input id="pin" type="text" class="input" placeholder="Your PIN" required />
+                                    <label class="fieldset-label text-gray-600 font-medium">Confirm PIN</label>
+                                    <input id="confirm-pin" type="text" class="input" placeholder="Confirm PIN"
+                                        required />
+                                    <button id="withdrawMoney-btn"
+                                        class="btn btn-neutral mt-4 bg-blue-700 border-none text-white">Withdraw Money</button>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
     </section>
     <script src="script/addMoney.js"></script>
+    <script src="script/toggle.js"></script>
 </body>
 
 </html>
