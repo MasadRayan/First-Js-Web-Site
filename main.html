@@ -7,6 +7,7 @@
     <title>Main Page</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5.0.0-beta.8/daisyui.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://kit.fontawesome.com/e21f3df6f5.js" crossorigin="anonymous"></script>
 </head>
 
 <body class="bg-slate-800">
@@ -21,7 +22,9 @@
                         <p class="text-gray-600">Available Balance</p>
                     </div>
                 </div>
-                <button class="border rounded-md p-2 text-gray-600 border-gray-400 cursor-pointer">Log Out</button>
+                <button id="logOut-btn"
+                    class=" btn border rounded-md p-2  text-gray-600 border-gray-400 cursor-pointer shadow-xl">Log
+                    Out</button>
             </nav>
         </header>
         <main class="px-6">
@@ -32,32 +35,32 @@
             </p>
             <!-- card section -->
             <div class="grid grid-cols-3 gap-4 mb-8">
-                <div
-                    id="add-money-box" class="cursor-pointer flex flex-col justify-center items-center p-5 border rounded-xl border-gray-400">
+                <div id="add-money-box"
+                    class="cursor-pointer flex flex-col justify-center items-center p-5 border rounded-xl border-gray-400">
                     <img class="mb-2" src="images/wallet 1.png" alt="">
                     <p class="text-sm text-gray-600">Add Money</p>
                 </div>
-                <div
-                    id="cash-out-box" class="cursor-pointer flex flex-col justify-center items-center p-5 border rounded-xl border-gray-400">
+                <div id="cash-out-box"
+                    class="cursor-pointer flex flex-col justify-center items-center p-5 border rounded-xl border-gray-400">
                     <img class="mb-2" src="images/send 1.png" alt="">
                     <p class="text-sm text-gray-600">CashOut</p>
                 </div>
-                <div
+                <div id="transfer-money-box"
                     class="cursor-pointer flex flex-col justify-center items-center p-5 border rounded-xl border-gray-400">
                     <img class="mb-2" src="images/money 1.png" alt="">
                     <p class="text-sm text-gray-600">TransferMoney</p>
                 </div>
-                <div
+                <div id="get-bonus-box"
                     class="cursor-pointer flex flex-col justify-center items-center p-5 border rounded-xl border-gray-400">
                     <img class="mb-2" src="images/financial 1.png" alt="">
                     <p class="text-sm text-gray-600">Get Bonus</p>
                 </div>
-                <div
+                <div id="pay-bill-box"
                     class="cursor-pointer flex flex-col justify-center items-center p-5 border rounded-xl border-gray-400">
                     <img class="mb-2" src="images/purse 1.png" alt="">
                     <p class="text-sm text-gray-600">Pay Bill</p>
                 </div>
-                <div
+                <div id="transection-box"
                     class="cursor-pointer flex flex-col justify-center items-center p-5 border rounded-xl border-gray-400">
                     <img class="mb-2" src="images/transaction 1.png" alt="">
                     <p class="text-sm text-gray-600">Transactions</p>
@@ -66,30 +69,33 @@
 
             <!-- add money section -->
             <section id="addMoneySection">
-                <h1 class="text-lg font-semibold mb-4">Add Money</h1>
+                <h1 class="text-lg font-semibold mb-4 text-center">Add Money</h1>
                 <div class="">
                     <div class="hero-content flex-col ">
                         <div class="card w-full max-w-sm shrink-0 shadow-2xl">
                             <form class="card-body">
                                 <legend class="text-gray-600 font-medium">Select A Bank</legend>
-                                <select class="select">
+                                <select id="allBank" class="select rounded-full">
                                     <option disabled selected>Select Bank</option>
                                     <option value="Bkash">Bkash</option>
                                     <option value="Nagad">Nagad</option>
-                                    <option value="DBBL">DBBL</option>
+                                    <option value="Rocket">Rocket</option>
                                 </select>
                                 <fieldset class="fieldset">
                                     <label class="fieldset-label text-gray-600 font-medium">Account Number</label>
-                                    <input id="account-number" type="number" class="input" placeholder=" Enter 11 digit Number"required />
+                                    <input id="account-number" type="number" class="input rounded-full"
+                                        placeholder=" Enter 11 digit Number" required />
                                     <label class="fieldset-label text-gray-600 font-medium">Amount to add</label>
-                                    <input id="amount" type="text" class="input" placeholder="Add Amount" required />
-                                    <label class="fieldset-label text-gray-600 font-medium">PIN Number</label>
-                                    <input id="pin" type="text" class="input" placeholder="Your PIN" required />
-                                    <label class="fieldset-label text-gray-600 font-medium">Confirm PIN</label>
-                                    <input id="confirm-pin" type="text" class="input" placeholder="Confirm PIN"
+                                    <input id="amount" type="text" class="input rounded-full" placeholder="Add Amount"
                                         required />
+                                    <label class="fieldset-label text-gray-600 font-medium">PIN Number</label>
+                                    <input id="pin" type="text" class="input rounded-full" placeholder="Your PIN"
+                                        required />
+                                    <label class="fieldset-label text-gray-600 font-medium">Confirm PIN</label>
+                                    <input id="confirm-pin" type="text" class="input rounded-full"
+                                        placeholder="Confirm PIN" required />
                                     <button id="addMoney-btn"
-                                        class="btn btn-neutral mt-4 bg-blue-700 border-none text-white">Add
+                                        class="btn btn-neutral rounded-full mt-4 bg-blue-700 border-none text-white">Add
                                         Money</button>
                                 </fieldset>
                             </form>
@@ -100,34 +106,142 @@
 
             <!-- cashout section -->
             <section id="cashoutSection">
-                <h1 class="text-lg font-semibold mb-4">Cash Out</h1>
+                <h1 class="text-lg font-semibold mb-4 text-center">Cash Out</h1>
                 <div class="">
                     <div class="hero-content flex-col ">
                         <div class="card w-full max-w-sm shrink-0 shadow-2xl">
                             <form class="card-body">
                                 <fieldset class="fieldset">
                                     <label class="fieldset-label text-gray-600 font-medium">Agent Number</label>
-                                    <input id="agent-number" type="number" class="input" placeholder=" Enter Agent Number"required />
+                                    <input id="agent-number" type="number" class="input rounded-full"
+                                        placeholder=" Enter Agent Number" required />
                                     <label class="fieldset-label text-gray-600 font-medium">Amount</label>
-                                    <input id="cashout-amount" type="text" class="input" placeholder="Enter amount to withdraw" required />
+                                    <input id="cashout-amount" type="text" class="input rounded-full"
+                                        placeholder="Enter amount to withdraw" required />
                                     <label class="fieldset-label text-gray-600 font-medium">PIN Number</label>
-                                    <input id="cashout-pin" type="text" class="input" placeholder="Your PIN" required />
+                                    <input id="cashout-pin" type="text" class="input rounded-full"
+                                        placeholder="Your PIN" required />
                                     <label class="fieldset-label text-gray-600 font-medium">Confirm PIN</label>
-                                    <input id="cashout-confirm-pin" type="text" class="input" placeholder="Confirm PIN"
-                                        required />
+                                    <input id="cashout-confirm-pin" type="text" class="input rounded-full"
+                                        placeholder="Confirm PIN" required />
                                     <button id="withdrawMoney-btn"
-                                        class="btn btn-neutral mt-4 bg-blue-700 border-none text-white">Withdraw Money</button>
+                                        class="btn btn-neutral mt-4 rounded-full bg-blue-700 border-none text-white">Withdraw
+                                        Money</button>
                                 </fieldset>
                             </form>
                         </div>
                     </div>
                 </div>
             </section>
+
+            <!-- transection history -->
+            <section id="transection-history">
+                <div class="flex justify-between items-center mb-3">
+                    <h1 class="text-lg font-semibold text-black">Transaction History</h1>
+                    <p class="text-sm text-gray-700 cursor-pointer">View All</p>
+                </div>
+                <div id="transaction-container">
+
+                </div>
+            </section>
+
+            <!-- Transfer money section -->
+            <section id="transfer-money-section">
+                <h1 class="text-lg font-semibold mb-4 text-center">Transfer Money</h1>
+                <div class="">
+                    <div class="hero-content flex-col ">
+                        <div class="card w-full max-w-sm shrink-0 shadow-2xl">
+                            <form class="card-body">
+                                <fieldset class="fieldset">
+                                    <label class="fieldset-label text-gray-600 font-medium">Enter Account Number</label>
+                                    <input id="transfer-account-number" type="number" class="input rounded-full"
+                                        placeholder=" Enter Agent Number" required />
+                                    <label class="fieldset-label text-gray-600 font-medium">Amount</label>
+                                    <input id="transfer-amount" type="text" class="input rounded-full"
+                                        placeholder="Enter amount to transfer" required />
+                                    <label class="fieldset-label text-gray-600 font-medium">PIN Number</label>
+                                    <input id="transfer-pin" type="text" class="input rounded-full"
+                                        placeholder="Your PIN" required />
+                                    <label class="fieldset-label text-gray-600 font-medium">Confirm PIN</label>
+                                    <input id="transfer-confirm-pin" type="text" class="input rounded-full"
+                                        placeholder="Confirm PIN" required />
+                                    <button id="transferMoney-btn"
+                                        class="btn btn-neutral mt-4 rounded-full bg-blue-700 border-none text-white">Send
+                                        Now</button>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Get bonus section -->
+            <section id="get-bonus">
+                <h1 class="text-lg font-semibold mb-4 text-center">Get Bonus</h1>
+                <div class="">
+                    <div class="hero-content flex-col ">
+                        <div class="card w-full max-w-sm shrink-0 shadow-2xl">
+                            <form class="card-body">
+                                <fieldset class="fieldset">
+                                    <label class="fieldset-label text-gray-600 font-medium">Enter Bonus Coupon</label>
+                                    <input id="bonus-cupon" type="text" class="input rounded-full"
+                                        placeholder="Enter your coupon" required />
+                                    <button id="cupon-btn"
+                                        class="btn btn-neutral mt-4 rounded-full bg-blue-700 border-none text-white">Get
+                                        Bonus</button>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- pay bill section -->
+            <section id="pay-bill-section">
+                <h1 class="text-lg font-semibold mb-4 text-center">Pay Bill</h1>
+                <div class="">
+                    <div class="hero-content flex-col ">
+                        <div class="card w-full max-w-sm shrink-0 shadow-2xl">
+                            <form class="card-body">
+                                <legend class="text-gray-600 font-medium">Select to pay</legend>
+                                <select id="allBills" class="select rounded-full">
+                                    <option disabled selected>Pay the bill</option>
+                                    <option value="Gas">Gas Bill</option>
+                                    <option value="Electricity">Electricity Bill</option>
+                                    <option value="Water">Water Bill</option>
+                                </select>
+                                <fieldset class="fieldset">
+                                    <label class="fieldset-label text-gray-600 font-medium">Biller Account Number</label>
+                                    <input id="biller-account-number" type="number" class="input rounded-full"
+                                        placeholder=" Enter 11 digit Number" required />
+                                    <label class="fieldset-label text-gray-600 font-medium">Amount to Pay</label>
+                                    <input id="bill-amount" type="text" class="input rounded-full" placeholder="Add Amount to Pay"
+                                        required />
+                                    <label class="fieldset-label text-gray-600 font-medium">PIN Number</label>
+                                    <input id="bill-pin" type="text" class="input rounded-full" placeholder="Your PIN"
+                                        required />
+                                    <label class="fieldset-label text-gray-600 font-medium">Confirm PIN</label>
+                                    <input id="bill-confirm-pin" type="text" class="input rounded-full"
+                                        placeholder="Confirm PIN" required />
+                                    <button id="billPay-btn"
+                                        class="btn btn-neutral rounded-full mt-4 bg-blue-700 border-none text-white">Pay Now</button>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
         </main>
     </section>
+    <script src="utilities/utilities.js"></script>
     <script src="script/addMoney.js"></script>
     <script src="script/toggle.js"></script>
     <script src="script/cashout.js"></script>
+    <script src="script/transfer-money.js"></script>
+    <script src="script/bonus-cupon.js"></script>
+    <script src="script/logout.js"></script>
+    <script src="script/pay-bill.js"></script>
 </body>
 
 </html>
